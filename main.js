@@ -15,7 +15,7 @@ const getWordInQuran = async (content) => {
       return;
     }
   }
-  const displayQuranWord = (wordInQuran) => {
+  const displayQuranWord = async (wordInQuran) => {
     const searchForAWordDiv = document.getElementById("quran-card");
     words= wordInQuran
 
@@ -23,8 +23,8 @@ const getWordInQuran = async (content) => {
 
     for (let i = 0; i < words.length; i++) {
       const wordData = {
-        surah: words[i].number,
-        ayah: words[i].number,
+        surah_no: words[i].number,
+        ayah_no: words[i].number,
         content: words[i].text
       }
 
@@ -47,8 +47,7 @@ const searchWord= async () => {
     return null
   }
 
-  const wordData = await getWordInQuran(content);
-  if (!wordData.error) {
-    displayQuranWord(wordData)
-  }
+  getWordInQuran(content).then (wordData => {
+  displayQuranWord(wordData);
+})
 }
