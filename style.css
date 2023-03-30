@@ -54,8 +54,8 @@
 
  #quran-card {
     display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates 3 equal columns */
-  grid-gap: 10px; /* Adds 20px of space between each grid item */
+   grid-template-columns: repeat(2, 1fr); /* Creates 3 equal columns */
+   grid-gap: 10px; 
  }
  .word-container {
     background-color: antiquewhite;
@@ -69,4 +69,18 @@
  }
  .word-container h5 {
     color: rgb(68, 25, 9);
+ }
+
+ .word-container h3 {
+   font-size: 15px;
+   color: rgb(84, 84, 84);
+   font-weight: 400;
+ }
+
+ #address {
+   display: flex;
+ }
+
+ #address h5 {
+   margin: 2px 5px;
  }

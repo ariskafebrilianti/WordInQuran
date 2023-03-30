@@ -21,18 +21,20 @@ const getWordInQuran = async (content) => {
 
     let listOfElement = "";
 
-    for (let i = 0; i < words.length; i++) {
+    for (let i = 1; i < words.length; i++) {
       const wordData = {
-        surah_no: words[i].number,
-        ayah_no: words[i].number,
-        content: words[i].text
+        surah: words[i].surah_no,
+        verse: words[i].verse_no,
+        content: words[i].content
       }
 
       const element = `
         <div class="word-container">
-          <h5>Surah:  ${wordData.surah}</h5>
-          <h5>Ayah:  ${wordData.ayah}</h5>
-          <h3>"${wordData.content}"</h3>
+        <div id="address">
+          <h5>Surah:  ${wordData.surah}  </h5>
+          <h5>Ayah:  ${wordData.verse}</h5>
+          </div>
+          <h3>${wordData.content}</h3>
         </div>
       `;
       listOfElement += element;
